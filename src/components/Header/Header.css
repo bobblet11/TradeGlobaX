@@ -1,0 +1,9 @@
+.bar {
+  display: center;
+  justify-content: space-between; /* Align items horizontally */
+  align-items: center; /* Align items vertically (optional) */
+}
+
+.bar > * {
+  margin-right: 20px; /* Add spacing between items */
+}
