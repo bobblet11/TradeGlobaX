@@ -1,18 +1,11 @@
 import "./Header.css";
+import Logo from "../Logo/Logo";
 export default function HeaderBar() {
   return (
     <div className="bar header-bar">
-      <ul className="bar-list">
-        <li>
-          <h1>LOGO COMPONENT</h1>
-        </li>
-        <li>
-          <h1>NAVBAR COMPONENT</h1>
-        </li>
-        <li>
-          <h1>SEARCHBAR COMPONENT</h1>
-        </li>
-      </ul>
+      <Logo logoImage="logo3.png" />
+      <div className="nav"></div>
+      <div className="search"></div>
     </div>
   );
 }

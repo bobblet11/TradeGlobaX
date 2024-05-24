@@ -1,0 +1,24 @@
+.logo1 {
+  background-color: white;
+  width: 78px;
+  height: 70px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.logo2 {
+  background-color: white;
+  width: 78px;
+  height: 70px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.logo3 {
+  background-color: white;
+  display: block;
+  width: auto;
+  height: 40px;
+
+  object-fit: cover;
+}

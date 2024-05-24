@@ -2,14 +2,12 @@
   width: 100%;
   height: auto;
   min-height: 100vh;
-  background-color: black;
 }
 .foreground-app {
   margin: auto;
   width: 1300px;
   height: auto;
   min-height: 100vh;
-  background-color: gray;
 }
 
 .separator-section {
