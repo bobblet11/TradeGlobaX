@@ -1,9 +1,45 @@
 .bar {
-  display: center;
-  justify-content: space-between; /* Align items horizontally */
-  align-items: center; /* Align items vertically (optional) */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.bar > * {
-  margin-right: 20px; /* Add spacing between items */
+.bar-list {
+  display: flex;
+  list-style: none;
+}
+
+.bar-list li {
+  margin-right: 20px;
+}
+
+.bar-list li:last-child {
+  margin-right: 0;
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+  background-color: brown;
+  overflow: hidden;
+}
+
+.ceiling {
+  height: 30%;
+  width: 100%;
+  background-color: blue;
+  overflow: hidden;
+}
+
+.header-bar {
+  width: 100%;
+  height: 70%;
+  background-color: red;
+  overflow: hidden;
+}
+
+.crypto-news-bar {
+}
+
+.account-interface-bar {
 }
