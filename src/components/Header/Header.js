@@ -1,4 +1,3 @@
-import HeaderLogo from "./HeaderLogo";
 import HeaderBar from "./HeaderBar";
 import CryptoNewsBar from "./CryptoNewsBar";
 import AccountInterfaceBar from "./AccountInterfaceBar";
