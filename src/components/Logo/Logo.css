@@ -16,7 +16,9 @@
 
 .logo3 {
   background-color: white;
-  width: 253px;
-  height: 70px;
-  padding: 5px;
+  display: block;
+  width: auto;
+  height: 40px;
+
+  object-fit: cover;
 }
