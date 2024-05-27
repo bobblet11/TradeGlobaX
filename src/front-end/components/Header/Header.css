@@ -71,17 +71,3 @@
   width: auto;
   height: 32px;
 }
-
-.nav {
-  flex-grow: 1;
-  background-color: green;
-  height: 100%;
-  padding: 0px 10px;
-}
-
-.search {
-  width: 208px;
-  padding: 0xp 10px;
-  background-color: yellow;
-  height: 100%;
-}

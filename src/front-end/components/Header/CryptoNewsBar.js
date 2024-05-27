@@ -14,6 +14,7 @@ export default function CryptoNewsBar() {
     )
     .then((response) => response.json())
     .then((responseJson) => {
+      console.log(responseJson);
       setAPIlist(responseJson['data']);
     })
     .catch((error)=> {

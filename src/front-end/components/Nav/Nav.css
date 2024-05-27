@@ -1,0 +1,28 @@
+.nav {
+    flex-grow: 1;
+    background-color: green;
+    height: 100%;
+    padding: 0px 10px;
+    display: flex;
+  
+    justify-content:flex-start;
+    
+  }
+  
+  .nav * {
+    width: fit-content;
+    height:100%;
+  
+    display: flex;
+    padding: 0px 25px;
+    margin: 0px 5px;
+  
+    background: yellow;
+  
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav > last-child {
+    margin-right: 0px;
+  }
