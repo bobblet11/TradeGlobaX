@@ -1,6 +1,7 @@
+import "./Nav.css"
 export default function NavDiv({value}){
     return (
-        <div>
+        <div className="navButton">
             <a target="blank" href="blank">
                 {value}
             </a>

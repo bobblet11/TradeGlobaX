@@ -23,6 +23,25 @@
     align-items: center;
   }
   
-  .nav > last-child {
+  .nav div.last-child {
     margin-right: 0px;
   }
+
+  .navButton {
+    font-weight: 700;
+    line-height: 1rem;
+    font-size: 0.75rem;
+    padding: 0 2px;
+    margin: 0px 10px;
+  }
+
+
+.navButton:hover a {
+  color: rgb(255,149,128);
+}
+
+.navButton a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s;
+}
