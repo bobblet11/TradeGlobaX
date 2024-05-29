@@ -6,10 +6,10 @@ export default function CryptoNewsBar() {
 
   function getCrypto(){
     fetch('https://cors-anywhere-pnd9.onrender.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=5',{
-        method:'GET',
-        headers: {
-            'X-CMC_PRO_API_KEY': '717d6948-4684-488c-b7a1-2cca131df220',
-        }
+      method:'GET',
+      headers: {
+          'X-CMC_PRO_API_KEY': '717d6948-4684-488c-b7a1-2cca131df220',
+      }
     }
     )
     .then((response) => response.json())
