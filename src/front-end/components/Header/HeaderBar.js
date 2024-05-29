@@ -9,7 +9,7 @@ export default function HeaderBar() {
   return (
     <div className="bar header-bar">
       <Logo logoImage="logo3.png" />
-      <Nav buttons={navs}/>
+      <Nav buttons={navs} direction={"left"}/>
       <div className="search">
         <SearchBar/>
       </div>
