@@ -1,12 +1,8 @@
 .crypto-list-item-main{
-    width:100%;
-    padding: 10px 4px;
-    margin:1px 0px;
-    height:48.5px;
+    width:90%;
+    padding: 10px 5%;
+    margin:5px 0px;
+    height:40px;
     background-color: burlywood;
-
-}
-
-.sub {
-    background-color: red;
+    border-radius: 10px;
 }

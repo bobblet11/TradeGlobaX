@@ -12,7 +12,17 @@
 }
 
 .list-item-container{
-    margin: 5px 0px;
+    margin: 0;
+    padding: 0;
     height: fit-content;
     width:98%;
+    margin-bottom: 20px;
+}
+
+.center-nav {
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+    width: 98%;
+    height: 30px;
 }
