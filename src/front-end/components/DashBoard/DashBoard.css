@@ -1,0 +1,29 @@
+.dashboard-main {
+    height:250px;
+    width:90%;
+    padding: 0px 4%;
+    margin: 1%;
+    background-color:darkgreen;
+    border: 1px grey solid;
+    border-radius: 25px;
+}
+
+.dashboard-header {
+    margin: 0;
+    margin-bottom: 5px;
+    line-height: 0.2em;
+    font-size: 0.75rem;
+    width:100%;
+    height: fit-content;
+}
+
+.dashboard-header h2{
+    line-height: 0.2em;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.dashboard-header p{
+    color: rgb(59,59,59);
+}
+

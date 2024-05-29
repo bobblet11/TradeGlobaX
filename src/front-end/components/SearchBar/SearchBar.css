@@ -1,0 +1,18 @@
+.search {
+    width: 200px;
+    height: 20px;
+    padding: 10px;
+    background-color: yellow;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search-bar {
+    width:13em;
+  
+    margin: 0 5px;
+    padding: 3px 2px;
+    border: 0;
+  }

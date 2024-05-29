@@ -1,0 +1,47 @@
+.nav {
+    flex-grow: 1;
+    background-color: green;
+    height: 100%;
+    padding: 0px 10px;
+    display: flex;
+  
+    justify-content:flex-start;
+    
+  }
+  
+  .nav * {
+    width: fit-content;
+    height:100%;
+  
+    display: flex;
+    padding: 0px 25px;
+    margin: 0px 5px;
+  
+    background: yellow;
+  
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav div.last-child {
+    margin-right: 0px;
+  }
+
+  .navButton {
+    font-weight: 700;
+    line-height: 1rem;
+    font-size: 0.75rem;
+    padding: 0 2px;
+    margin: 0px 10px;
+  }
+
+
+.navButton:hover a {
+  color: rgb(255,149,128);
+}
+
+.navButton a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s;
+}
