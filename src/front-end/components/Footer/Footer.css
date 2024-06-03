@@ -1,0 +1,139 @@
+.footer-main {
+  background-color: grey;
+}
+
+.footer-body1 {
+  background-color: green;
+  width: 100%;
+  display:flex;
+  padding: 0px;
+}
+
+.footer-left {
+  display: block;
+  align-items: center;
+  margin: 15px 0px;
+  width:45%;
+  height: auto;
+  background-color: pink;
+  padding: 0 2.5%;
+}
+
+.footer-intro {
+  font-weight: normal;
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem; 
+  margin-top: 1.25rem; 
+}
+
+.footer-col {
+  margin: 15px 0px;
+  background-color: bisque;
+  width: 12%;
+  height: auto;
+  padding:0 2.5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.col-header {
+  color: #374151; 
+  font-weight: 600; 
+  font-size: 0.875rem;
+  line-height: 1.25rem; 
+}
+
+.col-list {
+  display: flex; /* Equivalent to tw-flex */
+  flex-direction: column; /* Equivalent to tw-flex-col */
+  row-gap: 1rem; /* Equivalent to tw-gap-y-4 */
+  margin-top: 0; /* Equivalent to tw-mt-0 */
+  overflow-y: hidden; /* Equivalent to tw-overflow-y-hidden */
+  padding-left: 0.5rem; /* Equivalent to tw-pl-2 */
+  border-width: 0; /* Equivalent to tw-border-0 */
+  border-bottom-width: 1px; /* Equivalent to tw-border-b */
+  padding-bottom: 1rem; /* Equivalent to tw-pb-4 */
+  border-style: solid; /* Equivalent to tw-border-solid */
+  border-color: #E5E7EB;
+}
+
+.footer-body2 {
+  background-color: aquamarine;
+  width: 100%;
+  display:flex;
+  padding: 0px;
+  height: 80px;
+}
+
+.footer-body2-left {
+  display:flex;
+  flex-direction: column; 
+  width: 50%;
+}
+
+.footer-line1 {
+  color: #374151; 
+  font-weight: 600; 
+  font-size: 0.875rem; 
+  line-height: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-line2 {
+  font-weight: 400; 
+  color: #6B7280; 
+  font-size: 0.875rem;
+  line-height: 1.25rem; 
+  margin-bottom: 0.5rem;
+}
+
+.footer-body2-right {
+  display:flex;
+  flex-direction: column; 
+  margin-right: 20px;
+  width: 50%;
+  justify-content: center;
+}
+
+.email-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer-body2-email {
+  width: 50%;
+  height: 40px;
+  border: 1px solid #6B7280;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin-right: 10px;
+}
+
+.footer-body2-button {
+  background-color: #2563EB;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0 10px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.footer-body3 {
+  background-color: goldenrod;
+  display: flex;
+  flex-direction: column;
+}
+
+.disclaimer-info, .disclaimer, .rights {
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-top: 0.7rem;
+}
+
+
+
