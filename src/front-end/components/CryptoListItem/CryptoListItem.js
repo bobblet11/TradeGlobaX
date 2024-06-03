@@ -1,9 +1,9 @@
 import "./CryptoListItem.css";
 
-export default function CryptoListItem(){
-    return(
-      <div className="crypto-list-item-main">
- 
-      </div>
-    );
-}
+import React from "react";
+
+const CryptoListItem = () => {
+  return <div className="crypto-list-item-main"></div>;
+};
+
+export default CryptoListItem;
