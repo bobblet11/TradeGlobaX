@@ -6,15 +6,10 @@
 }
 
 .main-crypto-footer-cards{
-    margin-right:3.3333%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.main-crypto-footer-cards:last-child{
-    margin-right:0;
 }
 
 .title{
