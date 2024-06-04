@@ -24,6 +24,7 @@ export default function CryptoNewsBar() {
   }
 
   const [APIlist, setAPIlist] = useState(new Array(5).fill(""));
+
   useEffect(() => {
     getCrypto();
     const interval = setInterval(() => {
