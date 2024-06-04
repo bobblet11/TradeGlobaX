@@ -1,10 +1,38 @@
 .crypto-list-item-main{
-    width:90%;
-    padding: 10px 5%;
+    width:100%;
+    padding: 10px 0%;
     margin:5px 0px;
     height:40px;
     background-color: burlywood;
     border-radius: 10px;
     display: flex;
-    line-height: 0;
+}
+
+.index {
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+
+}
+
+.symbol{
+    width: 5%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.name {
+    width: 12%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-left: 3px;
 }

@@ -7,48 +7,48 @@ import { Routes, Route } from "react-router-dom";
 import CoinPage from "../CoinPage/CoinPage";
 import React, { useEffect, useState } from "react";
 
-export default function Frame(){
+export default function Frame() {
+  const [APIlist, setAPIlist] = useState(new Array(5).fill(""));
 
-    const [APIlist, setAPIlist] = useState(new Array(5).fill(""));
+  function getCrypto() {
+    console.log("1321231");
+    fetch(
+      "https://cors-anywhere-pnd9.onrender.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest",
+      {
+        method: "GET",
+        headers: {
+          "X-CMC_PRO_API_KEY": "717d6948-4684-488c-b7a1-2cca131df220",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((responseJson) => {
+        console.log(responseJson["data"]);
+        setAPIlist(responseJson["data"]);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
 
-    function getCrypto(){
-        console.log("1321231")
-        fetch('https://cors-anywhere-pnd9.onrender.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',{
-          method:'GET',
-          headers: {
-              'X-CMC_PRO_API_KEY': '717d6948-4684-488c-b7a1-2cca131df220',
-          }
-        }
-        )
-        .then((response) => response.json())
-        .then((responseJson) => {
-          console.log(responseJson['data']);
-          setAPIlist(responseJson['data']);
-        })
-        .catch((error)=> {
-            console.error(error);
-        });
-    };
-    
-    useEffect(() => {    
-        getCrypto()
-        const interval=setInterval(()=>{
-          getCrypto()
-          },60000)
-    
-        return()=>clearInterval(interval);
-      }, []);
+  useEffect(() => {
+    getCrypto();
+    const interval = setInterval(() => {
+      getCrypto();
+    }, 60000);
 
+    return () => clearInterval(interval);
+  }, []);
 
-    return (
-        <div className="background-app">
-        <div className="foreground-app">
-        <Header APIdata={APIlist}/>
+  return (
+    <div className="background-app">
+      <div className="foreground-app">
+        <Header APIdata={APIlist} />
         <div className="separator-section"></div>
 
         <Routes>
-            <Route path="Home" element={<MainPage APIdata={APIlist}/>} />
-            <Route path=":coinSymbol" element={<CoinPage />} />
+          <Route path="Home" element={<MainPage APIdata={APIlist} />} />
+          <Route path=":coinSymbol" element={<CoinPage />} />
         </Routes>
 
         <CryptoNewsFooter title={"Title"} />
@@ -56,7 +56,7 @@ export default function Frame(){
         <div className="separator-section"></div>
         <Footer />
         <hr />
-        </div>
-        </div> 
-        );
+      </div>
+    </div>
+  );
 }
