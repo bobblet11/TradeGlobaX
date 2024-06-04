@@ -9,17 +9,17 @@
 }
 
 .index {
-    width: 5%;
+    width: 4%;
     display: flex;
-    justify-content: center;
     align-items: center;
     font-weight: 700;
     font-size: 1rem;
-
+    align-content: left;
+    padding-left: 25px;
 }
 
 .symbol{
-    width: 5%;
+    width: 6%;
     display: flex;
     justify-content: right;
     align-items: center;
@@ -28,9 +28,69 @@
 }
 
 .name {
-    width: 12%;
+    width: 18%;
     display: flex;
     justify-content: left;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-left: 3px;
+}
+
+.price {
+    width: 8%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-left: 3px;
+}
+
+.oneHour {
+    width: 7%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-left: 3px;
+}
+
+.twentyfourHour {
+    width: 7%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-left: 3px;
+}
+
+.sevenDay {
+    width: 7%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-left: 3px;
+}
+
+.twentyfourVol {
+    width: 15%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-left: 3px;
+}
+
+.marketCap {
+    width: 15%;
+    display: flex;
+    justify-content: right;
     align-items: center;
     font-weight: 700;
     font-size: 1rem;

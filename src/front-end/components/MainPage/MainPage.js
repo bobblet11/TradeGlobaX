@@ -19,17 +19,27 @@ export default function MainPage(props) {
             <th className="th6">7d</th>
             <th className="th7">24h Volume</th>
             <th className="th8">Market Cap</th>
-            <th className="th9">Change</th>
           </tr>
         </table>
         <ul className="listul">
           {props.APIdata.map((coin, idx) => {
             return (
               <li key={coin.id}>
+                {console.log(coin)}
                 <CryptoListItem
-                  index={idx}
-                  symbol={coin.symbol}
-                  name={coin.name}
+                  index={idx + 1}
+                  symbol={coin === "" ? "" : coin.symbol}
+                  name={coin === "" ? "" : coin.name}
+                  price={coin === "" ? "" : coin.quote.USD.price}
+                  oneHour={coin === "" ? "" : coin.quote.USD.percent_change_1h}
+                  twentyFourHour={
+                    coin === "" ? "" : coin.quote.USD.percent_change_24h
+                  }
+                  sevenDay={coin === "" ? "" : coin.quote.USD.percent_change_7d}
+                  twentyFourHourVolume={
+                    coin === "" ? "" : coin.quote.USD.volume_24h
+                  }
+                  marketCap={coin === "" ? "" : coin.quote.USD.market_cap}
                 />
               </li>
             );

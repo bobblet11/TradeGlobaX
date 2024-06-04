@@ -36,7 +36,7 @@
     color: black;
     font-weight: bold;
     font-size: 1.2rem;
-    width: 5%;
+    width: 2%;
 }
 
 .th2 {
@@ -45,13 +45,22 @@
     color: black;
     font-weight: bold;
     font-size: 1.2rem;
-    width: 30%;
+    width: 12%;
     text-align: left;
-    padding-left: 20px;
+    padding-left: 45px;
 
 }
 
-.th3, .th4, .th5, .th6 , .th7, .th8, .th9{
+.th3, .th4, .th5, .th6 {
+    border-radius: 5px;
+    background-color: aqua;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 2%;
+}
+
+.th7, .th8 {
     border-radius: 5px;
     background-color: aqua;
     color: black;
