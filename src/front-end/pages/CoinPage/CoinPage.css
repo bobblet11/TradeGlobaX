@@ -1,0 +1,13 @@
+.coin-page{
+    width:100%;
+    height:fit-content;
+    min-height: 700px;
+    padding: 10px 0px;
+    margin: 0;
+    background-color: chocolate;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

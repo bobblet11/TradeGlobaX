@@ -3,11 +3,11 @@ import CryptoNewsBar from "./CryptoNewsBar";
 import AccountInterfaceBar from "./AccountInterfaceBar";
 import "./Header.css";
 
-export default function Header() {
+export default function Header(props) {
   return (
     <div className="header">
       <div className="bar ceiling">
-        <CryptoNewsBar />
+        <CryptoNewsBar APIdata={props.APIdata}/>
         <AccountInterfaceBar />
       </div>
 
