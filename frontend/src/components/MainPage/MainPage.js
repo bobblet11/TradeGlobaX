@@ -1,7 +1,7 @@
 import "./MainPage.css";
 import DashBoard from "../DashBoard/DashBoard";
-import CryptoListItem from "../CryptoListItem/CryptoListItem";
 import Nav from "../Nav/Nav";
+import { Link } from "react-router-dom";
 
 export default function MainPage(props) {
   return (
@@ -20,31 +20,87 @@ export default function MainPage(props) {
             <th className="th7">24h Volume</th>
             <th className="th8">Market Cap</th>
           </tr>
-        </table>
-        <ul className="listul">
           {props.APIdata.map((coin, idx) => {
             return (
-              <li key={coin.id}>
+              <tr key={coin.id}>
                 {console.log(coin)}
-                <CryptoListItem
-                  index={idx + 1}
-                  symbol={coin === "" ? "" : coin.symbol}
-                  name={coin === "" ? "" : coin.name}
-                  price={coin === "" ? "" : coin.quote.USD.price}
-                  oneHour={coin === "" ? "" : coin.quote.USD.percent_change_1h}
-                  twentyFourHour={
-                    coin === "" ? "" : coin.quote.USD.percent_change_24h
-                  }
-                  sevenDay={coin === "" ? "" : coin.quote.USD.percent_change_7d}
-                  twentyFourHourVolume={
-                    coin === "" ? "" : coin.quote.USD.volume_24h
-                  }
-                  marketCap={coin === "" ? "" : coin.quote.USD.market_cap}
-                />
-              </li>
+                <td>{idx + 1}</td>
+                <td>
+                  {" "}
+                  <Link
+                    to={coin === "" ? "" : coin.symbol}
+                    className="name-link"
+                  >
+                    <div className="clickable-container">
+                      <div className="name">{coin === "" ? "" : coin.name}</div>
+                      <div className="symbol">
+                        {coin === "" ? "" : coin.symbol}
+                      </div>
+                    </div>
+                  </Link>
+                </td>
+                <td>{`$${(
+                  Math.round(
+                    (coin === "" ? "" : coin.quote.USD.price + Number.EPSILON) *
+                      100
+                  ) / 100
+                ).toLocaleString()}`}</td>
+                <td>
+                  {`$${(
+                    Math.round(
+                      (coin === ""
+                        ? ""
+                        : coin.quote.USD.percent_change_1h + Number.EPSILON) *
+                        100
+                    ) / 100
+                  ).toLocaleString()}`}
+                </td>
+                <td>
+                  {`$${(
+                    Math.round(
+                      (coin === ""
+                        ? ""
+                        : coin.quote.USD.percent_change_24h + Number.EPSILON) *
+                        100
+                    ) / 100
+                  ).toLocaleString()}
+                  `}
+                </td>
+                <td>
+                  {`$${(
+                    Math.round(
+                      (coin === ""
+                        ? ""
+                        : coin.quote.USD.percent_change_7d + Number.EPSILON) *
+                        100
+                    ) / 100
+                  ).toLocaleString()}
+                  `}
+                </td>
+                <td>
+                  {`$${(
+                    Math.round(
+                      (coin === ""
+                        ? ""
+                        : coin.quote.USD.volume_24h + Number.EPSILON) * 100
+                    ) / 100
+                  ).toLocaleString()}
+                  `}
+                </td>
+                <td>
+                  {`$${(
+                    Math.round(
+                      (coin === ""
+                        ? ""
+                        : coin.quote.USD.market_cap + Number.EPSILON) * 100
+                    ) / 100
+                  ).toLocaleString()}
+                  `}
+                </td>
+              </tr>
             );
           })}
-        </ul>
+        </table>
 
         <Nav
           direction={"center"}

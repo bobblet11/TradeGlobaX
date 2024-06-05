@@ -5,10 +5,13 @@ export default function CryptoListItem(props) {
   return (
     <div className="crypto-list-item-main">
       <div className="index">{props.index}</div>
-      <Link to={props.symbol}>
-        <div className="symbol">{props.symbol} :</div>
+      <Link to={props.symbol} className="name-link">
+        <div className="clickable-container">
+          <div className="name">{props.name}</div>
+          <div className="symbol">{props.symbol}</div>
+        </div>
       </Link>
-      <div className="name">{props.name} </div>
+
       <div className="price">
         {`$${(
           Math.round((props.price + Number.EPSILON) * 100) / 100

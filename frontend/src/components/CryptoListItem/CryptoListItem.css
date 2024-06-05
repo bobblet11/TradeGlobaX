@@ -6,7 +6,13 @@
     background-color: burlywood;
     border-radius: 10px;
     display: flex;
+    justify-content: space-between;
 }
+
+a {
+    height: 100%;
+}
+
 
 .index {
     width: 4%;
@@ -18,23 +24,37 @@
     padding-left: 25px;
 }
 
-.symbol{
-    width: 6%;
+.clickable-container{
+    height:100%;
+    width: fit-content;
     display: flex;
-    justify-content: right;
-    align-items: center;
-    font-weight: 700;
-    font-size: 1rem;
 }
 
 .name {
-    width: 18%;
+    width: auto;
     display: flex;
     justify-content: left;
     align-items: center;
     font-weight: 700;
     font-size: 1rem;
+    padding: 0px 5px;
+    color: black;
+}
+
+.name-link {
+    text-decoration: none;
+}
+
+.symbol {
+    width: 5%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.8rem;
     padding-left: 3px;
+    color: grey;
+    padding: 0 5px;
 }
 
 .price {

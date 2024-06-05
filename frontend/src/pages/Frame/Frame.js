@@ -47,8 +47,11 @@ export default function Frame() {
         <div className="separator-section"></div>
 
         <Routes>
-          <Route path="/Home" element={<MainPage APIdata={APIlist} />} />
-          <Route path="/Home/:coinID" element={<CoinPage APIdata={APIlist}/>} />
+          <Route path="/home" element={<MainPage APIdata={APIlist} />} />
+          <Route
+            path="/home/:coinID"
+            element={<CoinPage APIdata={APIlist} />}
+          />
         </Routes>
 
         <CryptoNewsFooter title={"Title"} />
