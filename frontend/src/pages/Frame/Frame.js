@@ -1,4 +1,4 @@
-import "../../../App.css";
+import "../../App.css";
 import Header from "../../components/Header/Header";
 import MainPage from "../../components/MainPage/MainPage";
 import CryptoNewsFooter from "../../components/CryptoNewsFooter/CryptoNewsFooter";

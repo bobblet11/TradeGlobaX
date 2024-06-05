@@ -1,5 +1,5 @@
 import "./App.css";
-import Frame from "./front-end/pages/Frame/Frame";
+import Frame from "./pages/Frame/Frame";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -7,7 +7,6 @@ function App() {
     <Routes>
       <Route path="/*" element={<Frame />} />
     </Routes>
-    
   );
 }
 
