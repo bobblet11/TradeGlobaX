@@ -1,10 +1,13 @@
 import "./CryptoListItem.css";
+import { Link } from "react-router-dom";
 
 export default function CryptoListItem(props) {
   return (
     <div className="crypto-list-item-main">
       <div className="index">{props.index}</div>
-      <div className="symbol">{props.symbol} :</div>
+      <Link to={props.symbol}>
+        <div className="symbol">{props.symbol} :</div>
+      </Link>
       <div className="name">{props.name} </div>
       <div className="price">
         {`$${(
