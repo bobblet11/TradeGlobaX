@@ -48,7 +48,7 @@ export default function Frame() {
 
         <Routes>
           <Route path="/Home" element={<MainPage APIdata={APIlist} />} />
-          <Route path="/:coinID" element={<CoinPage APIdata={APIlist}/>} />
+          <Route path="/Home/:coinID" element={<CoinPage APIdata={APIlist}/>} />
         </Routes>
 
         <CryptoNewsFooter title={"Title"} />

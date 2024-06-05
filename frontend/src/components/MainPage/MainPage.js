@@ -2,8 +2,6 @@ import "./MainPage.css";
 import DashBoard from "../DashBoard/DashBoard";
 import CryptoListItem from "../CryptoListItem/CryptoListItem";
 import Nav from "../Nav/Nav";
-import CoinPage from "../../pages/CoinPage/CoinPage";
-import { Routes, Route } from "react-router-dom";
 
 export default function MainPage(props) {
   return (
