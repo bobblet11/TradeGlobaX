@@ -37,7 +37,7 @@ export default function CoinPage(props){
                 <div>
                     <div className="coin-title-container">
                         <div>
-                            <h3><Link>Home </Link>{" > " + name + " price"}</h3>
+                            <h3><Link to={"/Home"} >Home </Link>{" > " + name + " price"}</h3>
                         </div>
                         <div>
                             <h3>{name} <span>{symbol}</span> <span>{" (" + id + ")" }</span></h3>

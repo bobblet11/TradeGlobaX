@@ -191,3 +191,17 @@ table{
     text-align: right;
 }
 
+
+a:active {
+    color: rgb(255,149,128);
+}
+
+a:hover {
+    color: rgb(255,149,128);
+}
+    
+a {
+text-decoration: none;
+color: black;
+transition: color 0.2s;
+}

@@ -31,40 +31,105 @@
 }
 
 .th1 { 
-    border-radius: 5px;
     background-color: aqua;
     color: black;
     font-weight: bold;
     font-size: 1.2rem;
     width: 2%;
+    text-align: right;    
+    padding-right: 10px;
 }
 
 .th2 {
-    border-radius: 5px;
     background-color: aqua;
     color: black;
     font-weight: bold;
     font-size: 1.2rem;
-    width: 12%;
+    width: 15%;
     text-align: left;
     padding-left: 45px;
-
+    text-align: right;
+    padding-right: 10px;
+    
 }
 
 .th3, .th4, .th5, .th6 {
-    border-radius: 5px;
     background-color: aqua;
     color: black;
     font-weight: bold;
     font-size: 1.2rem;
-    width: 2%;
+    width:7%;
+    padding: 0px;
+    text-align: right;
+    padding-right: 10px;
 }
 
 .th7, .th8 {
-    border-radius: 5px;
     background-color: aqua;
     color: black;
     font-weight: bold;
     font-size: 1.2rem;
     width: 10%;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.crypto-list-item {
+    background-color: aliceblue;
+    text-align: right;
+}
+
+table, th, td {
+    border-collapse: collapse;
+}
+
+td {
+    border:1px solid rgb(210, 210, 210);
+    border-left: none;
+    border-right: none;
+    padding: 0px 10px;
+    margin-right: 10px;
+}
+
+.clickable-container {
+    display:flex;
+    text-decoration: none;
+    height:100%;
+    padding: 25px 0;
+}
+
+.name {
+    font-size: 12pt;
+    font-weight: 600;
+    margin-right: auto;
+    text-align: left;
+    text-decoration: none; color: black;
+}
+
+.symbol {
+    font-size: 10pt;
+    font-weight: 200;
+    text-decoration: none; color: black;
+
+}
+
+.text-dec {
+    text-decoration: none;
+    color: black;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
 }
