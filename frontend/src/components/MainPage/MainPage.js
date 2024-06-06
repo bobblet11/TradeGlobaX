@@ -23,7 +23,6 @@ export default function MainPage(props) {
           {props.APIdata.map((coin, idx) => {
             return (
               <tr key={coin.id}>
-                {console.log(coin)}
                 <td>{idx + 1}</td>
                 <td>
                   {" "}

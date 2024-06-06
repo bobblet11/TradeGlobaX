@@ -47,6 +47,7 @@ export default function Frame() {
         <div className="separator-section"></div>
 
         <Routes>
+          <Route path="/" element={null} />
           <Route path="/home" element={<MainPage APIdata={APIlist} />} />
           <Route
             path="/home/:coinID"
