@@ -9,12 +9,12 @@ export default function AccountInterfaceBar() {
     <div className="bar account-interface-bar">
       <ul className="bar-list">
         <li>
-          <Link to={"login"}>
+          <Link to="/login">
             <FontAwesomeIcon icon={faUserCircle} size="2x" />
           </Link>
         </li>
         <li>
-          <Link to={"setting"}>
+          <Link to="/setting">
             <FontAwesomeIcon icon={faCog} size="2x" />
           </Link>
         </li>
