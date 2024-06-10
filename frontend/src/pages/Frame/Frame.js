@@ -13,9 +13,9 @@ export default function Frame() {
   const [APIlist, setAPIlist] = useState(new Array(5).fill(""));
 
   function getCrypto() {
-    console.log("1321231");
+
     fetch(
-      "https://cors-anywhere-pnd9.onrender.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest",
+      "https://cors-anywhere-pnd9.onrender.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=202",
       {
         method: "GET",
         headers: {
@@ -49,6 +49,7 @@ export default function Frame() {
         <div className="separator-section"></div>
 
         <Routes>
+          <Route path="/" element={null} />
           <Route path="/home" element={<MainPage APIdata={APIlist} />} />
           <Route
             path="/home/:coinID"
