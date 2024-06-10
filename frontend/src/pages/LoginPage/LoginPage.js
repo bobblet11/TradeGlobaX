@@ -3,7 +3,7 @@ import BackButton from "../../components/BackButton/BackButton";
 
 const LoginPage = () => {
   return (
-    <div>
+    <div className="login-main">
       <BackButton dest="/" />
     </div>
   );
