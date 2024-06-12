@@ -13,7 +13,7 @@ export default function Frame() {
   function getCrypto() {
 
     fetch(
-      "https://cors-anywhere-pnd9.onrender.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=202",
+      "https://cors-anywhere-pnd9.onrender.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=200",
       {
         method: "GET",
         headers: {

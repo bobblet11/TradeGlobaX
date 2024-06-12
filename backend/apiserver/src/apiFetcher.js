@@ -15,67 +15,64 @@ const client = new MongoClient(uri, {
 });
 
 
-async function fetchWriteCrypto(key){
+async function fetchData(){
+  try{
     let currentDate= new Date();
     console.log("fetching at " + currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds());
-    
-    try{
-      const data = await fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=1000",
-      { 
-        method: "GET",
-        headers: {"X-CMC_PRO_API_KEY": key,},
-      })
-      let dataJson = await data.json();
-      dataJson = dataJson["data"];
-  
-      console.log("connecting to DB using " + uri);
-      await client.connect();
-      console.log("success\n\npinging to DB");
-      await client.db("admin").command({ ping: 1 });
-      console.log("success");
+    const data = await fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=1000",
+    { 
+      method: "GET",
+      headers: {"X-CMC_PRO_API_KEY": key,},
+    })
+    let dataJson = await data.json();
+    return dataJson["data"];
 
-      console.log("getting db list");
-      let databasesList = await client.db().admin().listDatabases();
-      console.log("Databases:");
-      databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+  }catch(error){
+    console.log(error);
 
-      console.log("checking if TradeGlobaX exists");
-      let exists = false;
-      for(const db of databasesList.databases) {
-        if (db.name === dbName){
-            console.log('tradeGlobaX found');
-            exists = true;
-        }
-      }
-      if (!exists){throw new Error("tradeGlobaX not found");}
-      
-      console.log("formatting JSON data");
-      const formatDataJson = formatData(dataJson);
-      console.log(formatDataJson[0]['timestamp'])
-      console.log("success");
-
-      const db = await client.db(dbName);
-      const coins = await db.collection("coins");
-
-      console.log("create index (will not recreate if already exists)")
-      const indexes = await coins.indexes();
-      console.log(indexes);
-      await coins.createIndex( { timestamp: 1, name: 1, symbol: 1 }, {unique:true} )
-      console.log("success");
-      
-      console.log("inserting documents")
-      await coins.insertMany(formatDataJson);
-      console.log("success");
-
-    }catch(error){
-      console.log(error);
-    }finally{
-      await client.close();
-    }
+  }
 }
 
-function formatData(dataJson){
-  const newData = dataJson.map((coin)=>{
+
+async function connectDB(){
+  try{
+    console.log("connecting to DB using " + uri);
+    await client.connect();
+    console.log("success\n\npinging to DB");
+    await client.db("admin").command({ ping: 1 });
+    console.log("success");
+
+  }catch(error){
+    console.log(error);
+
+  }
+}
+
+
+async function getDBList(){
+  try{
+    console.log("getting db list");
+    let databasesList = await client.db().admin().listDatabases();
+    console.log("Databases:");
+    databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+    console.log("checking if TradeGlobaX exists");
+    let exists = false;
+    for(const db of databasesList.databases) {
+      if (db.name === dbName){
+        console.log('tradeGlobaX found');
+        exists = true;
+      }
+    }
+    if (!exists){throw new Error("tradeGlobaX not found");}
+  }catch(error){
+    console.log(error);
+  }
+}
+
+
+async function formatData(dataJson){
+  console.log("formatting JSON data");
+  const newData = await dataJson.map((coin)=>{
     return {
     timestamp:          coin.last_updated,
     id:                 coin.id,
@@ -98,7 +95,44 @@ function formatData(dataJson){
     percent_change_90d: coin.quote.USD.percent_change_90d,
     }
   });
+  console.log("success");
   return newData;
+}
+
+
+async function writeDB(data){
+  try{
+    const db = await client.db(dbName);
+    const coins = await db.collection("coins");
+
+    console.log("create index (will not recreate if already exists)")
+    const indexes = await coins.indexes();
+    console.log(indexes);
+    await coins.createIndex( { timestamp: 1, name: 1, symbol: 1 }, {unique:true} )
+    console.log("success");
+    
+    console.log("inserting documents")
+    await coins.insertMany(data);
+    console.log("success");
+  }catch(error){
+    console.log(error);
+  }
+}
+
+
+async function fetchWriteCrypto(){ 
+    try{
+      let data = await fetchData();
+      await connectDB();
+      await getDBList();
+      data = await formatData(data);
+      await writeDB(data);
+      
+    }catch(error){
+      console.log(error);
+    }finally{
+      await client.close();
+    }
 }
 
 
@@ -106,10 +140,10 @@ async function startAPIFetcher(){
     console.log("checking for start of hour.\nwaiting for");
     waitStartOfHour();
     console.log("at start of hour");
-    await fetchWriteCrypto(key);
+    await fetchWriteCrypto();
     //updates every half hour
     const interval = setInterval(() => {
-      fetchWriteCrypto(key);
+      fetchWriteCrypto();
       }, (60 * 1000* 30));
 }
 

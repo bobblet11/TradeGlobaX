@@ -15,12 +15,6 @@
     background-color: red;
 }
 
-.coin-info-left > * {
-    width: calc(100% - 10px);
-    margin: 10px 5px;
-    padding-left: 0;
-    padding-right: 0;
-}
 
 .coin-title-container {
     height:fit-content;
@@ -146,9 +140,11 @@ table{
 
 }
 
-.coin-graph {
+.coin-graph-container{
     height:500px;
-    background-color: brown;
+    width:100%;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -167,10 +163,13 @@ table{
 
 .coin-change {
     background-color: cadetblue;
+    margin: 15px auto;
+    
 }
 
+
 .coin-change > table {
-    width:100%
+    width:100%;
 }
 
 .equalise {
@@ -185,10 +184,12 @@ table{
 
 .equalise > th {
     background-color: aquamarine;
+    border-right: black 1px dotted;
 }
 
 .equalise > td {
-    text-align: right;
+    text-align: center;
+    border-right: rgb(68, 68, 68) 1px dotted;
 }
 
 
@@ -205,3 +206,30 @@ text-decoration: none;
 color: black;
 transition: color 0.2s;
 }
+
+.section1L{
+    height: 530px;
+    border-bottom: solid black 1px;
+    margin-bottom: 5px;
+}
+
+.section1L > * {
+    width: calc(100% - 10px);
+    margin: 10px 5px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.section1R{
+    height: 530px;
+    border-bottom: solid black 1px;
+    margin-bottom: 5px;
+}
+
+.section1R > * {
+    width: calc(100% - 10px);
+    margin: 10px 5px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
