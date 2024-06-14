@@ -6,6 +6,8 @@ import Footer from "../../components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import CoinPage from "../CoinPage/CoinPage";
 import React, { useEffect, useState } from "react";
+import LoginPage from "../LoginPage/LoginPage";
+import SettingPage from "../SettingPage/SettingPage";
 
 export default function Frame() {
   const [APIlist, setAPIlist] = useState(new Array(5).fill(""));
@@ -53,6 +55,8 @@ export default function Frame() {
             path="/home/:coinID"
             element={<CoinPage APIdata={APIlist} />}
           />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/setting" element={<SettingPage />} />
         </Routes>
 
         <CryptoNewsFooter title={"Title"} />
