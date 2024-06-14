@@ -1,18 +1,11 @@
-import axios from "axios";
-import { MongoClient, ServerApiVersion } from "mongodb";
+import * as DB from "./databaseControls.js"
 
 const uri = "mongodb://127.0.0.1:27017";
 const dbName = "local"
-const collectionName = "coins"
 const key = "717d6948-4684-488c-b7a1-2cca131df220"
 
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
+
+const client = DB.createClient(uri);
 
 
 async function fetchData(){
@@ -34,47 +27,11 @@ async function fetchData(){
 }
 
 
-async function connectDB(){
-  try{
-    console.log("connecting to DB using " + uri);
-    await client.connect();
-    console.log("success\n\npinging to DB");
-    await client.db("admin").command({ ping: 1 });
-    console.log("success");
-
-  }catch(error){
-    console.log(error);
-
-  }
-}
-
-
-async function getDBList(){
-  try{
-    console.log("getting db list");
-    let databasesList = await client.db().admin().listDatabases();
-    console.log("Databases:");
-    databasesList.databases.forEach(db => console.log(` - ${db.name}`));
-    console.log("checking if TradeGlobaX exists");
-    let exists = false;
-    for(const db of databasesList.databases) {
-      if (db.name === dbName){
-        console.log('tradeGlobaX found');
-        exists = true;
-      }
-    }
-    if (!exists){throw new Error("tradeGlobaX not found");}
-  }catch(error){
-    console.log(error);
-  }
-}
-
-
 async function formatData(dataJson){
   console.log("formatting JSON data");
   const newData = await dataJson.map((coin)=>{
     return {
-    timestamp:          coin.last_updated,
+    timestamp:          new Date(coin.last_updated),
     id:                 coin.id,
     name:               coin.name,
     symbol:             coin.symbol,
@@ -100,33 +57,13 @@ async function formatData(dataJson){
 }
 
 
-async function writeDB(data){
-  try{
-    const db = await client.db(dbName);
-    const coins = await db.collection("coins");
-
-    console.log("create index (will not recreate if already exists)")
-    const indexes = await coins.indexes();
-    console.log(indexes);
-    await coins.createIndex( { timestamp: 1, name: 1, symbol: 1 }, {unique:true} )
-    console.log("success");
-    
-    console.log("inserting documents")
-    await coins.insertMany(data);
-    console.log("success");
-  }catch(error){
-    console.log(error);
-  }
-}
-
-
 async function fetchWriteCrypto(){ 
     try{
       let data = await fetchData();
-      await connectDB();
-      await getDBList();
+      await DB.connectDB(client, uri);
+      await DB.getDBList(client, dbName);
       data = await formatData(data);
-      await writeDB(data);
+      await DB.writeDB(client, dbName, data);
       
     }catch(error){
       console.log(error);
@@ -138,7 +75,7 @@ async function fetchWriteCrypto(){
 
 async function startAPIFetcher(){
     console.log("checking for start of hour.\nwaiting for");
-    waitStartOfHour();
+    //waitStartOfHour();
     console.log("at start of hour");
     await fetchWriteCrypto();
     //updates every half hour
