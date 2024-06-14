@@ -1,12 +1,11 @@
-import React from "react";
-import BackButton from "../../components/BackButton/BackButton";
+// import React from "react";
+// import BackButton from "../../components/BackButton/BackButton";
 
-const LoginPage = () => {
-  return (
-    <div className="login-main">
-      <BackButton dest="/" />
-    </div>
-  );
-};
+// const LoginPage = () => {
+//   return (
+//     <div className="login-main">
+//     </div>
+//   );
+// };
 
-export default LoginPage;
+// export default LoginPage;
