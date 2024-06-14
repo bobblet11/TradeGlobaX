@@ -12,6 +12,16 @@ registerCharts();
 export default function CoinPage(props){
     const { coinID } = useParams();
     const page = getCoinPage(coinID);
+    
+    //api call to my storage server
+    //only 1 call! hmmm, but I dont want API call to happen everytime this refreshes,
+    //because this page will rerender if the state changes, and if it rerenders, it will run the api call
+
+
+    
+
+
+
 
     let id = page===""?"undefined":page.id;
     let name = page===""?"undefined":page.name;
@@ -197,11 +207,29 @@ export default function CoinPage(props){
                         </tr>
                     </table>
                 </div>
+                
 
+                               
+                <div className="section2R">
+                    <div className="wallet">
+                        <div className="account_balance">
+
+                        </div>
+                        <div className="coin_purchase_interface">
+                            <div></div>
+                            <div>
+                                <h3>
+                                    Action
+                                </h3>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
             </div>
         </div>
-
+    //make this a component
 
         );
 }

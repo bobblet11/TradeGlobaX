@@ -233,3 +233,18 @@ transition: color 0.2s;
     padding-right: 0;
 }
 
+
+.section2R{
+    height: 530px;
+    border-bottom: solid black 1px;
+    margin-bottom: 5px;
+}
+
+.section2R > * {
+    width: calc(100% - 10px);
+    margin: 10px 5px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+

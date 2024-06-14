@@ -1,5 +1,5 @@
-const express = require('express');
-
+import express from 'express';
+import {router as coins} from './coins.js';
 const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,11 +17,15 @@ const html = `<!DOCTYPE html>
 </body>
 </html>`;
 
-const app = express();
+export const app = express();
 
 app.get('/', (req, res) => {
+  console.log("GET request at /")
   res.set('Content-Type', 'text/html');
   res.status(200).send(html);
 });
 
-module.exports = app;
+
+app.use('/coins', coins);
+
+
