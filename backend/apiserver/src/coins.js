@@ -1,41 +1,67 @@
 import express from 'express';
 import * as DB from "./databaseControls.js"
+import url from 'url'
+import {logToFile} from "./logger.js";
 
-const uri = "mongodb://127.0.0.1:27017";
-const dbName = "local";
-const client = DB.createClient(uri);
+const failedResponseBody = 
+`
+<h1>
+TradeGlobaX
+</h1>
+<div>
+
+Error! 
+
+</div>
+`;
 
 
 export const router = express.Router();
 
 router.get('/', async function(req, res){
     try{
-        console.log("GET request at /coins/");
-        res.set('Content-Type', 'application/json');
-        await DB.connectDB(client, uri);
-        await DB.getDBList(client, dbName);
+        logToFile("GET request at /coins/");
+
+        let responseCode = 400;
+        let responseHeader = {'Content-Type': ' text/html'};
+        let responseBody = failedResponseBody;
+
+        let queryString = url.parse(req.url, true).query;
+        const coinToSearch = queryString.coinSymbol;
+        const startStamp = queryString.startStamp;
+        const stopStamp = queryString.stopStamp;
+        
+        const startStampDate = new Date(startStamp);
+        const stopStampDate = new Date(stopStamp);
+
+        if ( stopStampDate - startStampDate < 0){
+            logToFile("timestamp Error");
+            res.writeHead(responseCode, responseHeader);
+            res.end(responseBody);
+            return;
+        }
+
+        responseCode = 200;
+        responseHeader = {'Content-Type': 'application/json'}
         //fix this request params thing, i think this is broken
-        const coinToSearch = req.query.coinSymbol;
-        console.log(typeof(coinToSearch));
-        const startStamp = req.query.startStamp;
-        const stopStamp = req.query.stopStamp;
-
-        const query = {symbol: coinToSearch};
-
+        const query = {symbol: coinToSearch, 
+                       timestamp : {$gte : startStamp, $lte : stopStamp}
+        };
         const projection = {timestamp:1, name:1, symbol:1, price:1};
 
-        let result = await DB.query(client, dbName, "coins", query, {});
-        console.log(result);
-        res.end(result);
-        //res.send(result);
-    
+        responseBody = await DB.query("coins", query, projection);
+        responseBody = await JSON.stringify(responseBody);
+
+        logToFile("writing responseBody");
+        res.writeHead(responseCode, responseHeader);
+        res.end(responseBody);
     }
     catch (error){
-        console.log(error);
+        logToFile(error);
     }
-    finally{
-        res.end();
-        await client.close();
+    finally {
+        logToFile("GET request finished")
+        logToFile("------------------------------------------")
     }
  });
 

@@ -1,5 +1,6 @@
 import {app} from "./app.js"
-
+import {startAPIFetcher} from "./apiFetcher.js"
+import {logToFile} from "./logger.js";
 
 const port = '8888';
 
@@ -7,5 +8,7 @@ const port = '8888';
 
 
 app.listen(port, () => {
-  console.log(`Server is listening on port ${port}...`);
+  logToFile(`Server is listening on port ${port}...`);
 });
+
+startAPIFetcher();

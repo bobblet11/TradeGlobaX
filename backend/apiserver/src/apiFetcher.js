@@ -1,37 +1,35 @@
 import * as DB from "./databaseControls.js"
+import {logToFile} from "./logger.js";
 
-const uri = "mongodb://127.0.0.1:27017";
-const dbName = "local"
 const key = "717d6948-4684-488c-b7a1-2cca131df220"
-
-
-const client = DB.createClient(uri);
-
 
 async function fetchData(){
   try{
-    let currentDate= new Date();
-    console.log("fetching at " + currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds());
+    let currentTime = new Date().getTime();
+    logToFile("------------------------------------------")
+    logToFile("fetching at " + new Date(currentTime).toUTCString());
     const data = await fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=1000",
     { 
       method: "GET",
       headers: {"X-CMC_PRO_API_KEY": key,},
     })
     let dataJson = await data.json();
+    currentTime += (30 * 60000);
+    logToFile("next fetch at " + new Date(currentTime).toUTCString())
+    logToFile("------------------------------------------")
     return dataJson["data"];
 
   }catch(error){
-    console.log(error);
-
+    logToFile(error);
   }
 }
 
 
 async function formatData(dataJson){
-  console.log("formatting JSON data");
+  logToFile("formatting JSON data");
   const newData = await dataJson.map((coin)=>{
     return {
-    timestamp:          new Date(coin.last_updated),
+    timestamp:          coin.last_updated,
     id:                 coin.id,
     name:               coin.name,
     symbol:             coin.symbol,
@@ -52,7 +50,7 @@ async function formatData(dataJson){
     percent_change_90d: coin.quote.USD.percent_change_90d,
     }
   });
-  console.log("success");
+  logToFile("success");
   return newData;
 }
 
@@ -60,57 +58,32 @@ async function formatData(dataJson){
 async function fetchWriteCrypto(){ 
     try{
       let data = await fetchData();
-      await DB.connectDB(client, uri);
-      await DB.getDBList(client, dbName);
       data = await formatData(data);
-      await DB.writeDB(client, dbName, data);
-      
+      await DB.writeDB(data);
     }catch(error){
       console.log(error);
-    }finally{
-      await client.close();
     }
 }
 
 
-async function startAPIFetcher(){
-    console.log("checking for start of hour.\nwaiting for");
-    //waitStartOfHour();
-    console.log("at start of hour");
-    await fetchWriteCrypto();
-    //updates every half hour
-    const interval = setInterval(() => {
-      fetchWriteCrypto();
-      }, (60 * 1000* 30));
+export async function startAPIFetcher(){
+    logToFile("checking for start of hour.");
+    var waitToStart = await setInterval(()=>{
+      let currentDateUTC = new Date(new Date().toUTCString());
+      let currentMinuteUTC = currentDateUTC.getMinutes();
+      let currentSecondsUTC = currentDateUTC.getSeconds();
+      if ((currentSecondsUTC >= 10 && currentSecondsUTC <=50) && (currentMinuteUTC ===30 || currentMinuteUTC===0)){
+        logToFile("READY at " + currentDateUTC.toUTCString());
+        fetchWriteCrypto();
+        //updates every half hour
+        const interval = setInterval(() => {
+          fetchWriteCrypto();
+        }, (60 * 1000* 30));
+        clearInterval(waitToStart);
+
+      }else{
+        logToFile("wait for " + ((currentMinuteUTC>30 ? 60-currentMinuteUTC : 30-currentMinuteUTC))+" : "+(60-currentSecondsUTC));
+      }
+    }, 1000);
 }
 
-
-function waitStartOfHour(){
-    let lastSeconds;
-    let lastMinute;
-    while (true){
-        let currentDate = new Date();
-        let currentMinute = currentDate.getMinutes();
-        let currentSeconds = currentDate.getSeconds();
-        if (currentSeconds <=10 && currentSeconds >=5 && currentMinute <=10 && currentMinute>=5){
-            console.log("READY at " + currentMinute+" : "+currentSeconds);
-            //start api loop
-            break;
-        }else{
-            //wait till seconds <=10, 
-
-            if (currentMinute != lastMinute){
-              lastMinute=currentMinute;
-            }
-            if (currentSeconds != lastSeconds){
-                lastSeconds=currentSeconds;
-                process.stdout.write("\r"+(60-lastMinute)+" : "+(60-currentSeconds));
-            }
-            continue;
-        }
-    }
-    console.log("ready to start api fetcher");
-    return;
-}
-
-startAPIFetcher();

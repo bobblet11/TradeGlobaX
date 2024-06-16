@@ -1,5 +1,6 @@
 import express from 'express';
 import {router as coins} from './coins.js';
+import {logToFile} from "./logger.js";
 const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +21,7 @@ const html = `<!DOCTYPE html>
 export const app = express();
 
 app.get('/', (req, res) => {
-  console.log("GET request at /")
+  logToFile("GET request at /")
   res.set('Content-Type', 'text/html');
   res.status(200).send(html);
 });

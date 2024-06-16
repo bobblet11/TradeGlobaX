@@ -1,0 +1,124 @@
+checking for start of hour.
+Server is listening on port 8888...
+60 : 44
+60 : 43
+60 : 42
+60 : 41
+60 : 40
+60 : 39
+60 : 38
+60 : 37
+Server is listening on port 8888...
+checking for start of hour.
+60 : 18
+60 : 17
+60 : 16
+60 : 15
+Server is listening on port 8888...
+checking for start of hour.
+59 : 59
+59 : 58
+59 : 57
+Server is listening on port 8888...
+checking for start of hour.
+wait for 54 : 2
+wait for 54 : 1
+wait for 53 : 60
+wait for 53 : 59
+wait for 53 : 58
+wait for 53 : 57
+wait for 53 : 56
+wait for 53 : 55
+wait for 53 : 54
+wait for 53 : 53
+wait for 53 : 52
+wait for 53 : 51
+READY at Sun, 16 Jun 2024 18:07:11 GMT
+------------------------------------------
+fetching at Sun, 16 Jun 2024 18:07:11 GMT
+formatting JSON data
+next fetch at Sun, 16 Jun 2024 18:37:11 GMT
+------------------------------------------
+success
+connecting to DB using mongodb://127.0.0.1:27017
+success
+
+pinging to DB
+success
+getting db list
+ - admin
+ - local
+ - config
+Databases:
+checking if TradeGlobaX exists
+create index (will not recreate if already exists)
+tradeGlobaX found
+[object Object],[object Object]
+success
+inserting documents
+success
+Server is listening on port 8888...
+checking for start of hour.
+READY at Sun, 16 Jun 2024 18:08:10 GMT
+------------------------------------------
+fetching at Sun, 16 Jun 2024 18:08:10 GMT
+next fetch at Sun, 16 Jun 2024 18:38:10 GMT
+------------------------------------------
+success
+formatting JSON data
+connecting to DB using mongodb://127.0.0.1:27017
+success
+
+pinging to DB
+success
+getting db list
+Databases:
+ - admin
+ - config
+ - local
+checking if TradeGlobaX exists
+tradeGlobaX found
+create index (will not recreate if already exists)
+[object Object],[object Object]
+inserting documents
+success
+MongoBulkWriteError: E11000 duplicate key error collection: local.coins index: timestamp_1_name_1_symbol_1 dup key: { timestamp: "2024-06-16T18:05:00.000Z", name: "Mantle", symbol: "MNT" }
+checking for start of hour.
+Server is listening on port 8888...
+READY at Sun, 16 Jun 2024 18:08:37 GMT
+------------------------------------------
+fetching at Sun, 16 Jun 2024 18:08:37 GMT
+next fetch at Sun, 16 Jun 2024 18:38:37 GMT
+formatting JSON data
+------------------------------------------
+success
+connecting to DB using mongodb://127.0.0.1:27017
+success
+
+pinging to DB
+getting db list
+success
+Databases:
+ - admin
+ - config
+ - local
+checking if TradeGlobaX exists
+tradeGlobaX found
+create index (will not recreate if already exists)
+[object Object],[object Object]
+success
+inserting documents
+MongoBulkWriteError: E11000 duplicate key error collection: local.coins index: timestamp_1_name_1_symbol_1 dup key: { timestamp: "2024-06-16T18:06:00.000Z", name: "Bitcoin", symbol: "BTC" }
+Server is listening on port 8888...
+checking for start of hour.
+wait for 51 : 60
+wait for 51 : 59
+wait for 51 : 58
+wait for 51 : 57
+Server is listening on port 8888...
+checking for start of hour.
+wait for 19 : 22
+wait for 19 : 21
+wait for 19 : 20
+wait for 19 : 19
+wait for 19 : 18
