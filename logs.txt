@@ -1,0 +1,143 @@
+Server is listening on port 8888...
+checking for start of hour.
+wait for 12 : 60
+wait for 12 : 59
+wait for 12 : 58
+wait for 12 : 57
+GET request at /coins/
+connecting to DB using mongodb://127.0.0.1:27017
+success
+
+pinging to DB
+getting db list
+success
+ - admin
+Databases:
+ - local
+ - config
+checking if TradeGlobaX exists
+tradeGlobaX found
+writing responseBody
+GET request finished
+------------------------------------------
+wait for 12 : 56
+wait for 12 : 55
+wait for 12 : 54
+wait for 12 : 53
+wait for 12 : 52
+wait for 12 : 51
+wait for 12 : 50
+wait for 12 : 49
+wait for 12 : 48
+wait for 12 : 47
+wait for 12 : 46
+wait for 12 : 45
+wait for 12 : 44
+wait for 12 : 42
+wait for 12 : 41
+wait for 12 : 40
+GET request at /coins/
+connecting to DB using mongodb://127.0.0.1:27017
+success
+
+pinging to DB
+getting db list
+success
+Databases:
+ - admin
+ - local
+ - config
+tradeGlobaX found
+checking if TradeGlobaX exists
+writing responseBody
+GET request finished
+------------------------------------------
+wait for 12 : 39
+wait for 12 : 38
+wait for 12 : 37
+wait for 12 : 36
+wait for 12 : 35
+wait for 12 : 34
+Server is listening on port 8888...
+checking for start of hour.
+wait for 11 : 53
+connecting to DB using mongodb://127.0.0.1:27017
+GET request at /coins/
+success
+
+pinging to DB
+getting db list
+success
+Databases:
+ - local
+ - config
+checking if TradeGlobaX exists
+ - admin
+tradeGlobaX found
+GET request finished
+------------------------------------------
+writing responseBody
+wait for 11 : 52
+wait for 11 : 51
+wait for 11 : 50
+wait for 11 : 49
+wait for 11 : 48
+wait for 11 : 47
+wait for 11 : 46
+wait for 11 : 45
+Server is listening on port 8888...
+CHECKING FOR START OF HALF HOUR/HOUR
+WAIT FOR 14 : 5
+WAIT FOR 14 : 4
+WAIT FOR 14 : 3
+WAIT FOR 14 : 2
+WAIT FOR 14 : 1
+WAIT FOR 13 : 60
+WAIT FOR 13 : 59
+WAIT FOR 13 : 58
+WAIT FOR 13 : 57
+WAIT FOR 13 : 56
+WAIT FOR 13 : 55
+WAIT FOR 13 : 54
+WAIT FOR 13 : 53
+WAIT FOR 13 : 52
+WAIT FOR 13 : 51
+WAIT FOR 13 : 50
+WAIT FOR 13 : 49
+WAIT FOR 13 : 48
+WAIT FOR 13 : 47
+WAIT FOR 13 : 46
+WAIT FOR 13 : 45
+WAIT FOR 13 : 44
+WAIT FOR 13 : 43
+WAIT FOR 13 : 42
+FETCHING COINS AT Mon, 17 Jun 2024 04:19:41 GMT
+Server is listening on port 8888...
+FINISHED FETCHING
+NEXT FETCH AT Mon, 17 Jun 2024 04:49:41 GMT
+------------------------------------------
+FORMATTING DATA
+FORMATTED DATA
+WRITING TO DB
+CONNECT TO DB mongodb://127.0.0.1:27017
+PINGING DB
+CONNECTED TO DB
+GETTING DB LIST
+DATABASES:
+ - config
+ - local
+ - admin
+CHECKING IF TradeGlobaX EXISTS
+TradeGlobaX FOUND
+GOT DB LIST
+WRITING
+WRITING FINISHED
+CLOSING CONNECTION
+START
+CHECKING FOR START OF HALF HOUR/HOUR
+Server is listening on port 8888...
+WAIT FOR 10 : 14
+WAIT FOR 10 : 13
+WAIT FOR 10 : 12
+WAIT FOR 10 : 11
+WAIT FOR 10 : 10
