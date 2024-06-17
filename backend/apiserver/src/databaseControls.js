@@ -19,76 +19,73 @@ function createClient(uri){
 
 export async function connectDB(){
   try{
-    logToFile("connecting to DB using " + uri);
+    logToFile("CONNECT TO DB " + uri);
     await client.connect();
-    logToFile("success\n\npinging to DB");
+    logToFile("PINGING DB");
     await client.db("admin").command({ ping: 1 });
-    logToFile("success");
-
-  }catch(error){
-    logToFile(error);
+  }finally{
+    logToFile("CONNECTED TO DB")
   }
 }
 
 
 export async function getDBList(){
   try{
-    logToFile("getting db list");
+    logToFile("GETTING DB LIST");
     let databasesList = await client.db().admin().listDatabases();
-    logToFile("Databases:");
+    logToFile("DATABASES:");
     databasesList.databases.forEach(db => logToFile(` - ${db.name}`));
-    logToFile("checking if TradeGlobaX exists");
+    logToFile("CHECKING IF TradeGlobaX EXISTS");
     let exists = false;
+
     for(const db of databasesList.databases) {
       if (db.name === dbName){
-        logToFile('tradeGlobaX found');
+        logToFile('TradeGlobaX FOUND');
         exists = true;
       }
     }
-    if (!exists){throw new Error("tradeGlobaX not found");}
-  }catch(error){
-    logToFile(error);
+
+    if (!exists){throw new Error("TradeGlobaX NOT FOUND");}
+  }finally{
+    logToFile("GOT DB LIST")
   }
 }
 
 
 export async function query(collection, query, projection){
   try{
-    await connectDB(client, uri);
-    await getDBList(client, dbName);
+    logToFile("READING DB")
+    await connectDB();
+    await getDBList();
 
     const db = await client.db(dbName);
     const coins = await db.collection(collection);
     let result = await coins.find(query).project(projection);
     result = await result.toArray()
+  
     return result;
-  }catch (error){
-    console.log(error);
+  }finally{
+    logToFile("QUERY FINISHED")
+    logToFile("CLOSING CONNECTION")
+    await client.close();
   }
 }
 
 export async function writeDB(data){
   try{
+    logToFile("WRITING TO DB")
     await connectDB();
     await getDBList();
     
     const db = await client.db(dbName);
     const coins = await db.collection("coins");
-
-    logToFile("create index (will not recreate if already exists)")
-    const indexes = await coins.indexes();
-    logToFile(indexes);
-    await coins.createIndex( { timestamp: 1, name: 1, symbol: 1 }, {unique:true} )
-    logToFile("success");
     
-    logToFile("inserting documents")
+    logToFile("WRITING")
     await coins.insertMany(data);
-    logToFile("success");
-  }catch(error){
-    logToFile(error);
   }finally{
+    logToFile("WRITING FINISHED")
+    logToFile("CLOSING CONNECTION")
     await client.close()
   }
 }
-
 

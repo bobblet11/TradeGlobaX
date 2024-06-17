@@ -1,124 +1,441 @@
-checking for start of hour.
-Server is listening on port 8888...
-60 : 44
-60 : 43
-60 : 42
-60 : 41
-60 : 40
-60 : 39
-60 : 38
-60 : 37
-Server is listening on port 8888...
-checking for start of hour.
-60 : 18
-60 : 17
-60 : 16
-60 : 15
-Server is listening on port 8888...
-checking for start of hour.
-59 : 59
-59 : 58
-59 : 57
-Server is listening on port 8888...
-checking for start of hour.
-wait for 54 : 2
-wait for 54 : 1
-wait for 53 : 60
-wait for 53 : 59
-wait for 53 : 58
-wait for 53 : 57
-wait for 53 : 56
-wait for 53 : 55
-wait for 53 : 54
-wait for 53 : 53
-wait for 53 : 52
-wait for 53 : 51
-READY at Sun, 16 Jun 2024 18:07:11 GMT
-------------------------------------------
-fetching at Sun, 16 Jun 2024 18:07:11 GMT
-formatting JSON data
-next fetch at Sun, 16 Jun 2024 18:37:11 GMT
-------------------------------------------
-success
-connecting to DB using mongodb://127.0.0.1:27017
-success
 
-pinging to DB
-success
-getting db list
+
+
+
+START
+Server is listening on port 8888...
+CHECKING FOR START OF HALF HOUR/HOUR
+WAIT FOR 15 : 23
+WAIT FOR 15 : 22
+WAIT FOR 15 : 21
+WAIT FOR 15 : 20
+WAIT FOR 15 : 19
+WAIT FOR 15 : 18
+
+
+
+
+START
+CHECKING FOR START OF HALF HOUR/HOUR
+Server is listening on port 8888...
+WAIT FOR 15 : 10
+WAIT FOR 15 : 9
+WAIT FOR 15 : 8
+WAIT FOR 15 : 7
+WAIT FOR 15 : 6
+WAIT FOR 15 : 5
+WAIT FOR 15 : 4
+GET request at /coins/
+BAD PARAMETER ERROR
+------------------------------------------
+WAIT FOR 15 : 3
+WAIT FOR 15 : 2
+WAIT FOR 15 : 1
+WAIT FOR 14 : 60
+WAIT FOR 14 : 59
+WAIT FOR 14 : 58
+WAIT FOR 14 : 57
+GET request at /coins/
+READING DB
+CONNECT TO DB mongodb://127.0.0.1:27017
+PINGING DB
+GETTING DB LIST
+CONNECTED TO DB
+DATABASES:
  - admin
  - local
  - config
-Databases:
-checking if TradeGlobaX exists
-create index (will not recreate if already exists)
-tradeGlobaX found
-[object Object],[object Object]
-success
-inserting documents
-success
-Server is listening on port 8888...
-checking for start of hour.
-READY at Sun, 16 Jun 2024 18:08:10 GMT
+TradeGlobaX FOUND
+GOT DB LIST
+CHECKING IF TradeGlobaX EXISTS
+QUERY FINISHED
+CLOSING CONNECTION
 ------------------------------------------
-fetching at Sun, 16 Jun 2024 18:08:10 GMT
-next fetch at Sun, 16 Jun 2024 18:38:10 GMT
-------------------------------------------
-success
-formatting JSON data
-connecting to DB using mongodb://127.0.0.1:27017
-success
-
-pinging to DB
-success
-getting db list
-Databases:
+SUCCESSFUL REQUEST
+REQUEST DONE
+WAIT FOR 14 : 56
+WAIT FOR 14 : 55
+WAIT FOR 14 : 54
+WAIT FOR 14 : 53
+WAIT FOR 14 : 52
+WAIT FOR 14 : 51
+WAIT FOR 14 : 50
+WAIT FOR 14 : 49
+WAIT FOR 14 : 48
+WAIT FOR 14 : 47
+WAIT FOR 14 : 46
+WAIT FOR 14 : 45
+WAIT FOR 14 : 44
+WAIT FOR 14 : 43
+WAIT FOR 14 : 42
+WAIT FOR 14 : 41
+WAIT FOR 14 : 40
+WAIT FOR 14 : 39
+WAIT FOR 14 : 38
+WAIT FOR 14 : 37
+WAIT FOR 14 : 36
+WAIT FOR 14 : 35
+WAIT FOR 14 : 34
+WAIT FOR 14 : 33
+WAIT FOR 14 : 32
+WAIT FOR 14 : 31
+WAIT FOR 14 : 30
+WAIT FOR 14 : 29
+WAIT FOR 14 : 28
+WAIT FOR 14 : 27
+WAIT FOR 14 : 26
+WAIT FOR 14 : 25
+WAIT FOR 14 : 24
+WAIT FOR 14 : 23
+GET request at /coins/
+READING DB
+CONNECT TO DB mongodb://127.0.0.1:27017
+PINGING DB
+CONNECTED TO DB
+GETTING DB LIST
+DATABASES:
  - admin
  - config
  - local
-checking if TradeGlobaX exists
-tradeGlobaX found
-create index (will not recreate if already exists)
-[object Object],[object Object]
-inserting documents
-success
-MongoBulkWriteError: E11000 duplicate key error collection: local.coins index: timestamp_1_name_1_symbol_1 dup key: { timestamp: "2024-06-16T18:05:00.000Z", name: "Mantle", symbol: "MNT" }
-checking for start of hour.
-Server is listening on port 8888...
-READY at Sun, 16 Jun 2024 18:08:37 GMT
+CHECKING IF TradeGlobaX EXISTS
+GOT DB LIST
+TradeGlobaX FOUND
+QUERY FINISHED
+CLOSING CONNECTION
+REQUEST DONE
+SUCCESSFUL REQUEST
 ------------------------------------------
-fetching at Sun, 16 Jun 2024 18:08:37 GMT
-next fetch at Sun, 16 Jun 2024 18:38:37 GMT
-formatting JSON data
-------------------------------------------
-success
-connecting to DB using mongodb://127.0.0.1:27017
-success
+WAIT FOR 14 : 22
+WAIT FOR 14 : 21
+WAIT FOR 14 : 20
+WAIT FOR 14 : 19
+WAIT FOR 14 : 18
+WAIT FOR 14 : 17
 
-pinging to DB
-getting db list
-success
-Databases:
+
+
+
+START
+CHECKING FOR START OF HALF HOUR/HOUR
+Server is listening on port 8888...
+GET request at /coins/
+CONNECT TO DB mongodb://127.0.0.1:27017
+READING DB
+PINGING DB
+CONNECTED TO DB
+GETTING DB LIST
  - admin
+ - local
+DATABASES:
+ - config
+TradeGlobaX FOUND
+GOT DB LIST
+CHECKING IF TradeGlobaX EXISTS
+QUERY FINISHED
+CLOSING CONNECTION
+SUCCESSFUL REQUEST
+REQUEST DONE
+------------------------------------------
+WAIT FOR 14 : 12
+WAIT FOR 14 : 11
+GET request at /coins/
+READING DB
+CONNECT TO DB mongodb://127.0.0.1:27017
+WAIT FOR 14 : 10
+PINGING DB
+GETTING DB LIST
+CONNECTED TO DB
+ - admin
+DATABASES:
  - config
  - local
-checking if TradeGlobaX exists
-tradeGlobaX found
-create index (will not recreate if already exists)
-[object Object],[object Object]
-success
-inserting documents
-MongoBulkWriteError: E11000 duplicate key error collection: local.coins index: timestamp_1_name_1_symbol_1 dup key: { timestamp: "2024-06-16T18:06:00.000Z", name: "Bitcoin", symbol: "BTC" }
+TradeGlobaX FOUND
+CHECKING IF TradeGlobaX EXISTS
+GOT DB LIST
+QUERY FINISHED
+CLOSING CONNECTION
+SUCCESSFUL REQUEST
+REQUEST DONE
+------------------------------------------
+WAIT FOR 14 : 9
+WAIT FOR 14 : 8
+WAIT FOR 14 : 7
+WAIT FOR 14 : 6
+WAIT FOR 14 : 5
+WAIT FOR 14 : 4
+WAIT FOR 14 : 3
+WAIT FOR 14 : 2
+WAIT FOR 14 : 1
+WAIT FOR 13 : 60
+WAIT FOR 13 : 59
+WAIT FOR 13 : 58
+WAIT FOR 13 : 57
+WAIT FOR 13 : 56
+WAIT FOR 13 : 55
+WAIT FOR 13 : 54
+WAIT FOR 13 : 53
+WAIT FOR 13 : 52
+WAIT FOR 13 : 51
+WAIT FOR 13 : 50
+WAIT FOR 13 : 49
+WAIT FOR 13 : 48
+WAIT FOR 13 : 47
+WAIT FOR 13 : 46
+WAIT FOR 13 : 45
+WAIT FOR 13 : 44
+WAIT FOR 13 : 43
+WAIT FOR 13 : 42
+WAIT FOR 13 : 41
+WAIT FOR 13 : 40
+WAIT FOR 13 : 39
+WAIT FOR 13 : 38
+WAIT FOR 13 : 37
+WAIT FOR 13 : 36
+WAIT FOR 13 : 35
+WAIT FOR 13 : 34
+WAIT FOR 13 : 33
+WAIT FOR 13 : 32
+WAIT FOR 13 : 31
+WAIT FOR 13 : 30
+WAIT FOR 13 : 29
+WAIT FOR 13 : 28
+WAIT FOR 13 : 27
+WAIT FOR 13 : 26
+WAIT FOR 13 : 25
+WAIT FOR 13 : 24
+WAIT FOR 13 : 23
+WAIT FOR 13 : 22
+WAIT FOR 13 : 21
+WAIT FOR 13 : 20
+WAIT FOR 13 : 19
+
+
+
+
+START
+CHECKING FOR START OF HALF HOUR/HOUR
 Server is listening on port 8888...
-checking for start of hour.
-wait for 51 : 60
-wait for 51 : 59
-wait for 51 : 58
-wait for 51 : 57
+WAIT FOR 13 : 13
+GET request at /coins/
+CONNECT TO DB mongodb://127.0.0.1:27017
+READING DB
+PINGING DB
+CONNECTED TO DB
+GETTING DB LIST
+DATABASES:
+ - config
+ - local
+ - admin
+CHECKING IF TradeGlobaX EXISTS
+TradeGlobaX FOUND
+GOT DB LIST
+CLOSING CONNECTION
+QUERY FINISHED
+SUCCESSFUL REQUEST
+REQUEST DONE
+------------------------------------------
+WAIT FOR 13 : 12
+WAIT FOR 13 : 11
+WAIT FOR 13 : 10
+WAIT FOR 13 : 9
+
+
+
+
+START
+CHECKING FOR START OF HALF HOUR/HOUR
 Server is listening on port 8888...
-checking for start of hour.
-wait for 19 : 22
-wait for 19 : 21
-wait for 19 : 20
-wait for 19 : 19
-wait for 19 : 18
+WAIT FOR 12 : 50
+WAIT FOR 12 : 49
+WAIT FOR 12 : 48
+WAIT FOR 12 : 47
+WAIT FOR 12 : 46
+WAIT FOR 12 : 45
+WAIT FOR 12 : 44
+WAIT FOR 12 : 43
+WAIT FOR 12 : 42
+WAIT FOR 12 : 41
+WAIT FOR 12 : 40
+WAIT FOR 12 : 39
+WAIT FOR 12 : 38
+WAIT FOR 12 : 37
+WAIT FOR 12 : 36
+GET request at /coins/
+CONNECT TO DB mongodb://127.0.0.1:27017
+READING DB
+PINGING DB
+GETTING DB LIST
+CONNECTED TO DB
+ - admin
+ - local
+ - config
+DATABASES:
+CHECKING IF TradeGlobaX EXISTS
+TradeGlobaX FOUND
+QUERY FINISHED
+GOT DB LIST
+CLOSING CONNECTION
+SUCCESSFUL REQUEST
+REQUEST DONE
+------------------------------------------
+WAIT FOR 12 : 35
+WAIT FOR 12 : 34
+WAIT FOR 12 : 33
+WAIT FOR 12 : 32
+WAIT FOR 12 : 31
+WAIT FOR 12 : 30
+WAIT FOR 12 : 29
+GET request at /coins/
+CONNECT TO DB mongodb://127.0.0.1:27017
+READING DB
+PINGING DB
+CONNECTED TO DB
+GETTING DB LIST
+ - admin
+ - local
+DATABASES:
+ - config
+CHECKING IF TradeGlobaX EXISTS
+TradeGlobaX FOUND
+GOT DB LIST
+QUERY FINISHED
+CLOSING CONNECTION
+SUCCESSFUL REQUEST
+REQUEST DONE
+------------------------------------------
+WAIT FOR 12 : 28
+WAIT FOR 12 : 27
+WAIT FOR 12 : 26
+WAIT FOR 12 : 25
+WAIT FOR 12 : 24
+WAIT FOR 12 : 23
+WAIT FOR 12 : 22
+WAIT FOR 12 : 21
+WAIT FOR 12 : 20
+WAIT FOR 12 : 19
+WAIT FOR 12 : 18
+WAIT FOR 12 : 17
+WAIT FOR 12 : 16
+WAIT FOR 12 : 15
+WAIT FOR 12 : 14
+WAIT FOR 12 : 13
+WAIT FOR 12 : 12
+WAIT FOR 12 : 11
+WAIT FOR 12 : 10
+WAIT FOR 12 : 9
+WAIT FOR 12 : 8
+GET request at /coins/
+CONNECT TO DB mongodb://127.0.0.1:27017
+READING DB
+PINGING DB
+CONNECTED TO DB
+GETTING DB LIST
+DATABASES:
+ - admin
+ - local
+ - config
+CHECKING IF TradeGlobaX EXISTS
+TradeGlobaX FOUND
+GOT DB LIST
+CLOSING CONNECTION
+QUERY FINISHED
+------------------------------------------
+SUCCESSFUL REQUEST
+REQUEST DONE
+WAIT FOR 12 : 7
+WAIT FOR 12 : 6
+WAIT FOR 12 : 5
+WAIT FOR 12 : 4
+WAIT FOR 12 : 3
+WAIT FOR 12 : 2
+GET request at /coins/
+CONNECT TO DB mongodb://127.0.0.1:27017
+READING DB
+PINGING DB
+CONNECTED TO DB
+GETTING DB LIST
+ - admin
+DATABASES:
+ - config
+ - local
+TradeGlobaX FOUND
+CHECKING IF TradeGlobaX EXISTS
+GOT DB LIST
+QUERY FINISHED
+CLOSING CONNECTION
+SUCCESSFUL REQUEST
+------------------------------------------
+REQUEST DONE
+WAIT FOR 12 : 1
+WAIT FOR 11 : 60
+WAIT FOR 11 : 59
+WAIT FOR 11 : 58
+WAIT FOR 11 : 57
+WAIT FOR 11 : 56
+WAIT FOR 11 : 55
+WAIT FOR 11 : 54
+GET request at /coins/
+CONNECT TO DB mongodb://127.0.0.1:27017
+READING DB
+PINGING DB
+CONNECTED TO DB
+GETTING DB LIST
+ - config
+DATABASES:
+ - local
+ - admin
+TradeGlobaX FOUND
+GOT DB LIST
+CHECKING IF TradeGlobaX EXISTS
+CLOSING CONNECTION
+QUERY FINISHED
+SUCCESSFUL REQUEST
+REQUEST DONE
+------------------------------------------
+WAIT FOR 11 : 53
+WAIT FOR 11 : 52
+WAIT FOR 11 : 51
+WAIT FOR 11 : 50
+WAIT FOR 11 : 49
+WAIT FOR 11 : 48
+WAIT FOR 11 : 47
+WAIT FOR 11 : 46
+WAIT FOR 11 : 45
+WAIT FOR 11 : 44
+WAIT FOR 11 : 43
+WAIT FOR 11 : 42
+WAIT FOR 11 : 41
+WAIT FOR 11 : 39
+WAIT FOR 11 : 38
+WAIT FOR 11 : 37
+WAIT FOR 11 : 36
+WAIT FOR 11 : 35
+WAIT FOR 11 : 34
+WAIT FOR 11 : 33
+WAIT FOR 11 : 32
+WAIT FOR 11 : 31
+WAIT FOR 11 : 30
+WAIT FOR 11 : 29
+WAIT FOR 11 : 28
+WAIT FOR 11 : 27
+WAIT FOR 11 : 26
+WAIT FOR 11 : 25
+WAIT FOR 11 : 24
+WAIT FOR 11 : 23
+WAIT FOR 11 : 22
+WAIT FOR 11 : 21
+WAIT FOR 11 : 20
+WAIT FOR 11 : 19
+WAIT FOR 11 : 18
+WAIT FOR 11 : 17
+WAIT FOR 11 : 16
+WAIT FOR 11 : 15
+WAIT FOR 11 : 14
+WAIT FOR 11 : 13
+WAIT FOR 11 : 12
+WAIT FOR 11 : 11
+WAIT FOR 11 : 10
+WAIT FOR 11 : 9
+WAIT FOR 11 : 8
+WAIT FOR 11 : 7
+WAIT FOR 11 : 6
