@@ -42,7 +42,7 @@ const LoginPage = () => {
             </div>
           </div>
 
-          <hr></hr>
+          <hr />
 
           <form>
             <div className="username-container">
@@ -67,6 +67,16 @@ const LoginPage = () => {
               <button type="submit">Login</button>
             </div>
           </form>
+
+          <div className="forgot-password">
+            <a href="#">Forgot Password?</a>
+          </div>
+
+          <hr />
+
+          <div className="create-acc">
+            Don't have an account? <a href="#">Create an account</a>
+          </div>
         </div>
       </div>
     </div>
