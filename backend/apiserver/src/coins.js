@@ -16,11 +16,11 @@ Error!
 \n
 `;
 
-const successfulInsert = 
+const successfulResponse = 
 `
 <div>
 
-Successful record insert
+Successful 
 
 </div>
 `;
@@ -46,14 +46,6 @@ Parameters are incorrect
 
 export const router = express.Router();
 
-function paramsToObject(entries) {
-    const result = {}
-    for(const [key, value] of entries) { // each 'entry' is a [key, value] tupple
-      result[key] = value;
-    }
-    return result;
-  }
-
 router.get('/', async function(req, res){
     logToFile("GET request at /coins/");
     let responseCode = 400;
@@ -67,9 +59,8 @@ router.get('/', async function(req, res){
     const startStampDate = new Date(startStamp);
     const stopStampDate = new Date(stopStamp);
 
-    if ( stopStampDate - startStampDate < 0){
+    if ( (coinToSearch===undefined || startStamp === undefined || stopStamp === undefined) || stopStampDate - startStampDate < 0){
         logToFile("BAD PARAMETER ERROR")
-        logToFile(error);
         logToFile("------------------------------------------")
         responseBody = failedResponseBody + badParameters;
         res.writeHead(responseCode, responseHeader);
@@ -98,7 +89,7 @@ router.get('/', async function(req, res){
     
     responseCode = 200;
     responseHeader = {'Content-Type': 'application/json'}
-    responseBody = successfulInsert;
+
     res.writeHead(responseCode, responseHeader);
     res.end(responseBody);
 
@@ -143,7 +134,7 @@ router.post('/', async function(req, res){
 
     responseCode = 200;
     responseHeader = {'Content-Type': 'application/json'}
-    responseBody = successfulInsert;
+    responseBody = successfulResponse;
     res.writeHead(responseCode, responseHeader);
     res.end(responseBody);
 
