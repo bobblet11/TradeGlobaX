@@ -32,6 +32,7 @@ export default function Frame() {
         console.error(error);
       });
   }
+  
 
   useEffect(() => {
     getCrypto();
