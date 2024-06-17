@@ -2,7 +2,7 @@ import {app} from "./app.js"
 import {startAPIFetcher} from "./apiFetcher.js"
 import {logToFile} from "./logger.js";
 
-const port = '8888';
+const port = '5555';
 
 //curl http://127.0.0.1:8888
 
