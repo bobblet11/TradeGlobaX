@@ -7,15 +7,10 @@
   font-family: inherit;
 }
 
-hr {
-  width: 600px;
-  margin: 10px 0px;
-}
-
 button {
   padding: 14px 20px;
   font-size: 1.5rem;
-  width: 600px;
+  width: 300px;
   transition-duration: 0.3s;
   cursor: pointer;
   background-color: pink;
@@ -27,7 +22,7 @@ button:hover {
 }
 
 input[type="text"], input[type="password"] {
-  width: 600px;
+  width: 300px;
   padding: 12px 4px;
   margin:0px 4px ;
   display: inline-block;
@@ -45,16 +40,6 @@ form {
   align-items: center;
 }
 
-.username-container {
-  margin: 10px 0px;
-}
-
-.login-title {
-  font-size: 2rem;
-  background-color: pink;
-  text-align: center;
-}
-
 .login-body {
   display: flex;
   flex-direction: column;
@@ -66,11 +51,49 @@ form {
   flex-direction: column;
   align-items: center;
   width: 700px;
-  height: 500px;
+  height: 800px;
   border: 5px solid black;
 }
 
+.TGX-logo {
+  margin: 20px 0px;
+}
+
+.login-title {
+  font-size: 2rem;
+  background-color: pink;
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+}
+
+.SM-login {
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  width: 500px;
+  margin: 25px 0px;
+}
+
 .text-sign {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin:0px 4px ;
 }
+
+.username-container {
+  margin: 10px 0px;
+}
+
+.password-container {
+  margin: 10px 0px;
+}
+
+.rem-me {
+  margin: 20px 0px 0px 0px;
+}
+
+.login-button {
+  margin: 2px 0px;
+}
+
