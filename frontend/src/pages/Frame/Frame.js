@@ -31,7 +31,6 @@ export default function Frame() {
         console.error(error);
       });
   }
-  
 
   useEffect(() => {
     getCrypto();
@@ -55,8 +54,8 @@ export default function Frame() {
             path="/home/:coinID"
             element={<CoinPage APIdata={APIlist} />}
           />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/setting" element={<SettingPage />} />
+          {/* <Route path="/login" element={<LoginPage />} />
+          <Route path="/setting" element={<SettingPage />} /> */}
         </Routes>
 
         <CryptoNewsFooter title={"Title"} />
