@@ -13,7 +13,6 @@ export default function Frame() {
   const [APIlist, setAPIlist] = useState(new Array(5).fill(""));
 
   function getCrypto() {
-
     fetch(
       "https://cors-anywhere-pnd9.onrender.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=200",
       {

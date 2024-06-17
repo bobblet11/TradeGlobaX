@@ -1,0 +1,76 @@
+*, 
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+hr {
+  width: 600px;
+  margin: 10px 0px;
+}
+
+button {
+  padding: 14px 20px;
+  font-size: 1.5rem;
+  width: 600px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+  background-color: pink;
+  border-radius: 5px;
+}
+
+button:hover {
+  color: rgb(255,149,128);
+}
+
+input[type="text"], input[type="password"] {
+  width: 600px;
+  padding: 12px 4px;
+  margin:0px 4px ;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="checkbox"] {
+  margin: 10px 4px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.username-container {
+  margin: 10px 0px;
+}
+
+.login-title {
+  font-size: 2rem;
+  background-color: pink;
+  text-align: center;
+}
+
+.login-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 700px;
+  height: 500px;
+  border: 5px solid black;
+}
+
+.text-sign {
+  font-size: 1.5rem;
+  margin:0px 4px ;
+}

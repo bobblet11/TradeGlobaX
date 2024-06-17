@@ -5,4 +5,10 @@
 .backButton {
     font-size: 50px;
     color: black;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.backButton:hover {
+    color: rgb(255,149,128);
 }

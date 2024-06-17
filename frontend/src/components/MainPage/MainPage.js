@@ -22,84 +22,84 @@ export default function MainPage(props) {
           </tr>
           {props.APIdata.map((coin, idx) => {
             return (
-                <tr className="crypto-list-item" key={coin.id}>
-                  <td>{idx + 1}</td>
-                  <td>
-                    <div className="text-dec">
-                        <Link
-                          to={coin === "" ? "" : coin.symbol}
-                          className="name-link"
-                        >
-
-                          <div className="clickable-container">
-                            <div className="name">{coin === "" ? "" : coin.name}</div>
-                            <div className="symbol">
-                              {coin === "" ? "" : coin.symbol}
-                            </div>
-                          </div>
-
-                        </Link>
-                    </div>
-                  </td>
-                  <td>{`$${(
+              <tr className="crypto-list-item" key={coin.id}>
+                <td>{idx + 1}</td>
+                <td>
+                  <div className="text-dec">
+                    <Link
+                      to={coin === "" ? "" : coin.symbol}
+                      className="name-link"
+                    >
+                      <div className="clickable-container">
+                        <div className="name">
+                          {coin === "" ? "" : coin.name}
+                        </div>
+                        <div className="symbol">
+                          {coin === "" ? "" : coin.symbol}
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                </td>
+                <td>{`$${(
+                  Math.round(
+                    (coin === "" ? "" : coin.quote.USD.price + Number.EPSILON) *
+                      100
+                  ) / 100
+                ).toLocaleString()}`}</td>
+                <td>
+                  {`$${(
                     Math.round(
-                      (coin === "" ? "" : coin.quote.USD.price + Number.EPSILON) *
+                      (coin === ""
+                        ? ""
+                        : coin.quote.USD.percent_change_1h + Number.EPSILON) *
                         100
                     ) / 100
-                  ).toLocaleString()}`}</td>
-                  <td>
-                    {`$${(
-                      Math.round(
-                        (coin === ""
-                          ? ""
-                          : coin.quote.USD.percent_change_1h + Number.EPSILON) *
-                          100
-                      ) / 100
-                    ).toLocaleString()}`}
-                  </td>
-                  <td>
-                    {`$${(
-                      Math.round(
-                        (coin === ""
-                          ? ""
-                          : coin.quote.USD.percent_change_24h + Number.EPSILON) *
-                          100
-                      ) / 100
-                    ).toLocaleString()}
+                  ).toLocaleString()}`}
+                </td>
+                <td>
+                  {`$${(
+                    Math.round(
+                      (coin === ""
+                        ? ""
+                        : coin.quote.USD.percent_change_24h + Number.EPSILON) *
+                        100
+                    ) / 100
+                  ).toLocaleString()}
                     `}
-                  </td>
-                  <td>
-                    {`$${(
-                      Math.round(
-                        (coin === ""
-                          ? ""
-                          : coin.quote.USD.percent_change_7d + Number.EPSILON) *
-                          100
-                      ) / 100
-                    ).toLocaleString()}
+                </td>
+                <td>
+                  {`$${(
+                    Math.round(
+                      (coin === ""
+                        ? ""
+                        : coin.quote.USD.percent_change_7d + Number.EPSILON) *
+                        100
+                    ) / 100
+                  ).toLocaleString()}
                     `}
-                  </td>
-                  <td>
-                    {`$${(
-                      Math.round(
-                        (coin === ""
-                          ? ""
-                          : coin.quote.USD.volume_24h + Number.EPSILON) * 100
-                      ) / 100
-                    ).toLocaleString()}
+                </td>
+                <td>
+                  {`$${(
+                    Math.round(
+                      (coin === ""
+                        ? ""
+                        : coin.quote.USD.volume_24h + Number.EPSILON) * 100
+                    ) / 100
+                  ).toLocaleString()}
                     `}
-                  </td>
-                  <td>
-                    {`$${(
-                      Math.round(
-                        (coin === ""
-                          ? ""
-                          : coin.quote.USD.market_cap + Number.EPSILON) * 100
-                      ) / 100
-                    ).toLocaleString()}
+                </td>
+                <td>
+                  {`$${(
+                    Math.round(
+                      (coin === ""
+                        ? ""
+                        : coin.quote.USD.market_cap + Number.EPSILON) * 100
+                    ) / 100
+                  ).toLocaleString()}
                     `}
-                  </td>
-                </tr>
+                </td>
+              </tr>
             );
           })}
         </table>
